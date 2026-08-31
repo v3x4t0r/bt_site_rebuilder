@@ -9,7 +9,8 @@ KEYWORDS = ["hendelser", "folk", "byliv", "innenriks", "utenriks", "nyheter/okon
 
 
 def scrape_links():
-    """Returns {category: set(urls)} so callers can pick new articles evenly across categories."""
+    """Returns {category: [urls]}, newest first (bt.no category pages list articles in
+    reverse-chronological order) - callers must preserve this order, not re-sort it."""
     by_category = {}
     for kw in KEYWORDS:
         try:
@@ -17,7 +18,8 @@ def scrape_links():
             r.raise_for_status()
         except Exception:
             continue
-        by_category[kw] = set(re.findall(rf'https://www\.bt\.no/{kw}/i/[^"\s<&]+', r.text, re.I))
+        found = re.findall(rf'https://www\.bt\.no/{kw}/i/[^"\s<&]+', r.text, re.I)
+        by_category[kw] = list(dict.fromkeys(found))  # de-dupe, keep page order
     return by_category
 
 
@@ -189,8 +191,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('cl
 
 
 def pick_round_robin(by_category, seen, limit):
-    """Interleaves categories so a run's picks span all of them, not just alphabetically-first ones."""
-    queues = {kw: sorted(u for u in urls if u not in seen and 'direkte' not in u.lower())
+    """Interleaves categories so a run's picks span all of them, not just one. Keeps each
+    category's newest-first order intact (no re-sorting) so the newest articles win."""
+    queues = {kw: [u for u in urls if u not in seen and 'direkte' not in u.lower()]
               for kw, urls in by_category.items()}
     picked = []
     while len(picked) < limit and any(queues.values()):
