@@ -5,7 +5,7 @@ OUT = "site"
 SEEN_FILE = f"{OUT}/seen_urls.txt"
 LIMIT = 24  # new articles fetched per run, spread evenly across categories
 KEYWORDS = ["hendelser", "folk", "byliv", "innenriks", "utenriks", "nyheter/okonomi",
-            "helse", "klima-og-miljoe", "krim", "politikk", "trafikk", "karriere"]
+            "helse", "klima-og-miljoe", "krim", "politikk", "trafikk", "karriere","bolig"]
 
 
 def scrape_links():
