@@ -1,9 +1,10 @@
-# Privacy Policy — BT Reader
+# Privacy Policy and Terms of Use — BT Reader
 
 _Last updated: 17 October 2026_
 
 BT Reader is a browser extension that shows the bt.no article you are currently reading in a clean,
-readable HTML view. It is a hobby project with no commercial purpose.
+readable HTML view. It is a hobby project with no commercial purpose, and it is **not affiliated with,
+endorsed by, or supported by Bergens Tidende, Schibsted, or any of their companies.**
 
 ## What the extension does with your data
 
@@ -44,6 +45,30 @@ carries, such as your IP address. Schibsted's handling of that request is govern
 ## Open source
 
 The complete source code is in this repository, so anyone can verify the statements above.
+
+## Terms of use and disclaimer
+
+**By installing or using BT Reader you accept the following.**
+
+- **Provided as is.** The extension is provided free of charge, "as is" and "as available", without
+  warranty of any kind, express or implied, including fitness for a particular purpose, accuracy, or
+  uninterrupted operation. It depends on a third-party API that may change or be withdrawn at any time
+  without notice, at which point the extension may stop working.
+- **You are responsible for your own use.** The extension only acts when you click its button, and it
+  acts on your behalf, in your browser, with your network connection. It is your responsibility to make
+  sure your use complies with [bt.no's terms of service](https://www.bt.no/), Schibsted's terms, applicable
+  copyright law, and any subscription or access conditions that apply to you. The extension does not
+  grant you any rights to BT's content, and the author makes no representation that any particular use
+  is permitted.
+- **Content belongs to the publisher.** All article text, images and video shown by the extension are
+  the property of Bergens Tidende / Schibsted and their licensors. The extension does not copy, store or
+  redistribute content; it displays, on your screen, content your browser fetched for you.
+- **No liability.** To the fullest extent permitted by law, the author shall not be liable for any
+  direct, indirect, incidental, consequential or other damages, claims, losses or costs arising from your
+  installation or use of the extension, from reliance on anything it displays, or from any action taken
+  by a third party in response to your use of it.
+- **Your own risk.** You install and use the extension at your own risk and discretion. If you do not
+  agree with these terms, do not install it; if it is already installed, remove it.
 
 ## Changes and contact
 
